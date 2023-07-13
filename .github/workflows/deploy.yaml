@@ -1,4 +1,4 @@
-name: Deploy Vercel
+name: Deploy Docs (Vercel)
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
@@ -6,7 +6,7 @@ env:
 
 on:
   workflow_run:
-    workflows: ["Build Book"]
+    workflows: ["Build Docs"]
     types: [completed]
 
 jobs:
@@ -15,14 +15,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: build
+          ref: "build"
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
+
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Build Project Artifacts
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --token=${{ secrets.VERCEL_TOKEN }}
+
       - name: Deploy Preview
         run: vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
