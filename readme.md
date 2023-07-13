@@ -1,14 +1,19 @@
 # Chain-of-Thought Hub Documentation
 
-- [build](#build)
+- [Build](#build)
+- [ChangeLog](#changelog)
 
-## build
+## Build
 
 ```bash
-# build the doc
+# build the docs
 pip install -U jupyter-book
 jupyter-book build docs/
 
-# take a look at the doc locally
+# take a look at the docs locally
 open docs/_build/html/index.html
 ```
+
+## ChangeLog
+
+- 2023-07-13 init
