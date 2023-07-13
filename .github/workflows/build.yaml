@@ -1,4 +1,4 @@
-name: Build Book
+name: Build Docs
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-book:
+  build-docs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
         run: |
           pip install jupyter-book
 
-      - name: Build the book
+      - name: Build the docs
         run: |
           jupyter-book build docs/
 
