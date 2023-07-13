@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Chain of Thought Hub Documentation
-author: Chain of Thought Hub Team
+title: Chain-of-Thought Hub Documentation
+author: Chain-of-Thought Hub Team
 logo: assets/logo.png
 
 # Force re-execution of notebooks on each build.

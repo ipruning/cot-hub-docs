@@ -1,4 +1,4 @@
-# Chain of Thought Hub Documentation
+# Chain-of-Thought Hub Documentation
 
 - [build](#build)
 
