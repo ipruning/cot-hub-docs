@@ -1,0 +1,35 @@
+name: Build Book
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-book:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          pip install jupyter-book
+
+      - name: Build the book
+        run: |
+          jupyter-book build docs/
+
+      - name: Push the book to the build branch
+        run: |
+          git config --global user.name 'build'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git checkout -b build
+          git add -f docs/_build
+          git commit -m "build"
+          git push -f origin build

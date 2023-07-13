@@ -1,0 +1,28 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/en/stable/structure/toc.html
+
+format: jb-book
+root: intro.md
+chapters:
+- file: datasets_main/readme.md
+  sections: 
+  - file: datasets_main/overview.md
+  - file: datasets_main/gsm8k.md
+  - file: datasets_main/mmlu.md
+  - file: datasets_main/bbh.md
+- file: datasets_long_context/readme.md
+  sections:
+  - file: datasets_long_context/overview.md
+- file: datasets_experimental/readme.md
+  sections:
+  - file: datasets_experimental/overview.md
+- file: model_behaviors/readme.md
+  sections: 
+  - file: model_behaviors/overview.md
+  - file: model_behaviors/gpt.md
+  - file: model_behaviors/claude.md
+  - file: model_behaviors/llama.md
+  - file: model_behaviors/t5.md
+- file: standard_prompt_library/readme.md
+  sections:
+  - file: standard_prompt_library/overview.md
